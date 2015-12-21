@@ -1,4 +1,26 @@
 angular.module('MyApp', ['ngCookies', 'ngResource', 'ngMessages', 'ngRoute', 'mgcrea.ngStrap'])
-  .config(function() {
+  .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
+	$locationProvider.html5Mode(true);
 
-  });
+	$routeProvider
+		.when('/', {
+			    templateUrl: 'views/home.html',
+    			controller: 'MainCtrl'	
+			})
+		.when('/add', {
+			    templateUrl: 'views/add.html',
+    			controller: 'AddCtrl'	
+			})
+		.when('/login', {
+			    templateUrl: 'views/login.html',
+    			controller: 'LoginCtrl'	
+			})
+		.when('/signup', {
+    			templateUrl: 'views/signup.html',
+    			controller: 'SignupCtrl'
+  			})
+		.when('/shows/:id', {
+    			templateUrl: 'views/detail.html',
+    			controller: 'DetailCtrl'
+  			})
+  }]);
