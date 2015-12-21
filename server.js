@@ -12,6 +12,7 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended:true}));
 //app.use(cookieparser());
 app.use(express.static(path.join(__dirname, 'public')));
+//this is to test GIT
 
 app.listen(app.get('port'), function () {
   console.log('Ready');
